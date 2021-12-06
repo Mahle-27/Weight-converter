@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="mb-3 text-center display-4">Weight Converter</h1>
+
+        <form>
+          <div class="form-group">
+            <input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Enter Pounds...">
+          </div>
+          <button id="submitBtn" type="button" class="btn btn-primary">Run</button>
+        </form>
+
+        <div id="output">
+          <div class="mb-2 card bg-danger">
+            <div class="card-block">
+              <h4>Grams:</h4>
+              <div id="gramsOutput"></div>
+            </div>
+          </div>
+
+          <div class="mb-2 card bg-warning">
+            <div class="card-block">
+              <h4>Kilograms:</h4>
+              <div id="kgOutput"></div>
+            </div>
+          </div>
+
+          <div class="mb-2 card bg-info">
+            <div class="card-block">
+              <h4>Ounces:</h4>
+              <div id="ozOutput"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <style>
+
+/* <!-- output field--> */
+  body{
+    margin-top:70px;
+    background:rgb(92, 72, 72);
+    color:#fff;
+    text-align: center;
+  }
+</style>
+
+<!-- //function that evaluates the weight and return result -->
+<script>
+  let lbs = 0;
+  let gramsOutput = document.getElementById("gramsOutput");
+  let kgOutput = document.getElementById("kgOutput");
+  let ozOutput = document.getElementById("ozOutput");
+
+  document.getElementById("lbsInput").addEventListener("input", function (e) {
+      lbs = e.target.value;
+  });
+
+  document.getElementById("submitBtn").addEventListener("click", function() {
+    gramsOutput.innerHTML = lbs / 0.0022046;
+    kgOutput.innerHTML = lbs / 2.2046;
+    ozOutput.innerHTML = lbs * 16;
+  });
+
+</script>
+</body>
+</html>
+
+  
